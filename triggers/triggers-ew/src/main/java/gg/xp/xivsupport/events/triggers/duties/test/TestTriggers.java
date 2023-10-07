@@ -20,7 +20,7 @@ import gg.xp.xivsupport.events.misc.pulls.PullEndedEvent;
 import gg.xp.xivsupport.events.state.XivState;
 import gg.xp.xivsupport.events.state.combatstate.ActiveCastRepository;
 
-@CalloutRepo(name = "TestTriggers", duty = KnownDuty.Test)
+@CalloutRepo(name = "TestTriggers", duty = KnownDuty.None)
 public class TestTriggers extends AutoChildEventHandler implements FilteredEventHandler {
 
 	private SimpleDateFormat logEntryFormat = new SimpleDateFormat("HH:mm:ss");
@@ -37,7 +37,8 @@ public class TestTriggers extends AutoChildEventHandler implements FilteredEvent
 
 	@Override
 	public boolean enabled(EventContext context) {
-		return state.dutyIs(KnownDuty.Test);
+		//return state.dutyIs(KnownDuty.None);
+		return false;
 		//return true;
 	}
 
